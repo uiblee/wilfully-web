@@ -47,3 +47,6 @@ env/
 
 # Bower libraries
 wilfully/static/libs
+
+#finder thumbnails
+.DS_Store
