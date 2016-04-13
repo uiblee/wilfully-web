@@ -49,15 +49,16 @@
 </div><!-- /.carousel -->
 </div><!-- /.wrapper -->
 
-<div class="body-content">
-  <div class="row">
-    <form class="pure-form">
-    <fieldset class="pure-group">
-       <input type="email" class="pure-input-1-2" placeholder="Email">
-    </fieldset>
-    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Create my will</button>
-</form>
-  </div><!-- /.row -->
-</div>
+<div class="container">
+
+      <form class="form-signup">
+        <h2 class="form-signup-heading">Create my will</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+
+    </div> <!-- /container -->
+
 {% endblock %}
 
