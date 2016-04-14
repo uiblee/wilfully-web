@@ -3,26 +3,35 @@
    ========================================================================== */
 
 /* universal */
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 
   .carousel-caption h3 {
     color: white;
-    font-family:'Poiret One';
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
   }
 
   .carousel-caption p {
-    font-size: 16px;
-    font-family:'Poiret One';
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
   }
 
+  .form-signup h2 {
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+.carousel-inner {
+  background-size:cover;
+  height:500px
+}
 
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 section {
@@ -34,7 +43,7 @@ textarea {
 }
 
 .container-narrow{
-  margin: 0 auto;
+  margin: 10 auto;
   max-width: 700px;
 }
 
@@ -50,23 +59,32 @@ textarea {
   width: 50%;
 }
 
-
+.email_form {
+  border-radius: 0;
+}
 
 .form-register .form-control {
   position: relative;
   font-size: 16px;
   height: auto;
-  padding: 10px;
+  padding: 1px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+
+.form-signup {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* footer */
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 1px;
   border-top: 1px solid #eaeaea;
   color: #999999;
 }
@@ -99,12 +117,39 @@ footer .footer-nav {
   margin-right: 25px;
   list-style: none;
 }
-.form-signup {
-  width: 200px;
-  margin-right: auto;
-  margin-left: auto;
+
+
+/* buttons */
+
+.createbtn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  width: 300px;
+  border: none;
+  height: 35px;
 }
 
+.createbtn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
 
 
 
