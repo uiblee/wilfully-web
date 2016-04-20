@@ -20,10 +20,19 @@
   .form-signup h2 {
     font-size: 25px;
     font-family: 'Ubuntu', sans-serif;
-    }
-.carousel-inner {
-  background-size:cover;
-  height:500px
+  }
+  .carousel-inner {
+    background-size:100% 100%;
+  }
+
+.wrapper {
+  background-size:100% 100%;
+  position: relative;
+}
+
+.container-narrow {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 html {
@@ -38,20 +47,27 @@ section {
   overflow: auto;
 }
 
+input .email_form{
+   text-align:center;
+}
+
 textarea {
   resize: vertical;
 }
 
 .container-narrow{
-  margin: 10 auto;
-  max-width: 700px;
+  margin: -10px;
+  max-width: 1000px;
 }
+
+
 
 /* Forms */
 
 .navbar-form input[type="text"],
 .navbar-form input[type="password"] {
   width: 180px;
+  color: #000000;
 }
 
 
@@ -78,6 +94,8 @@ textarea {
   width: 300px;
   margin-right: auto;
   margin-left: auto;
+  border-radius: 0px;
+  text-align: center;
 }
 
 /* footer */
@@ -114,7 +132,7 @@ footer .company {
 
 footer .footer-nav {
   float: right;
-  margin-right: 25px;
+  margin-right: 10px;
   list-style: none;
 }
 
@@ -151,7 +169,77 @@ footer .footer-nav {
   text-decoration: none;
 }
 
+/*
+* ==========================================================================
+* Services Section
+* ==========================================================================
+*/
+.services-section {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.services-section .services-header {
+  margin-bottom: 50px;
+}
+.services-section .services-header .services-header-title {
+  margin-bottom: 15px;
+}
+.services-section .services-row-tail {
+  margin-top: 50px;
+}
+.services-section .services-icon {
+  color: #3498db;
+  margin-bottom: 30px;
+}
+.services-section .services-title {
+  margin-bottom: 15px;
+}
+.services-section .services-desc {
+  margin-bottom: 30px;
+}
+@media (max-width: 700px) {
+  .services-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .services-section .services-group {
+    margin-bottom: 50px;
+  }
+  .services-section .services-row-tail {
+    margin-top: 0;
+  }
+}
 
+/*
+* ==========================================================================
+* Staff Section
+* ==========================================================================
+*/
+.staff-section {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+}
+@media (max-width: 700px) {
+  .staff-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.staff-section .staff-header {
+  margin-bottom: 30px;
+}
+.staff-section .staff-header .staff-header-title {
+  margin-bottom: 15px;
+}
+.staff-section .staff-image {
+  margin-bottom: 15px;
+}
+.staff-section .staff-designation {
+  margin-bottom: 20px;
+}
 
 
 
