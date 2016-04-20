@@ -12,7 +12,7 @@ class RegisterForm(Form):
 
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=3, max=25)])
-    email = StringField('Email',
+    email = StringField('',
                         validators=[DataRequired(), Email(), Length(min=6, max=40)])
     password = PasswordField('Password',
                              validators=[DataRequired(), Length(min=6, max=40)])
