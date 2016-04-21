@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h1>Create your free and legal will</h1>
+    <br/>
+    <form id="registerForm" class="form form-register" method="POST" action="" role="form">
+            {{ settings_form.hidden_tag() }}
+            <div class="form-group">
+                <label>
+                  {{settings_form.married()}}
+                  {{settings_form.married.label.text}}
+                </label>
+            </div>
+            <div class="form-group">
+              {{settings_form.spousename.label}}
+              {{settings_form.spousename(class_='form-control', placeholder='Put spouse name here.')}}
+            </div>
+            <p><input class="btn btn-default btn-submit" type="submit" value="Register"></p>
+    </form>
+</div> <!-- /container -->
+
+    <p><em>Already registered?</em> Click <a href="/">here</a> to login.</p>
+</div>
+{% endblock %}

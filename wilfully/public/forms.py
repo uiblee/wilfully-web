@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 """Public forms."""
 from flask_wtf import Form
-from wtforms import PasswordField, StringField
+from wtforms import PasswordField, StringField, BooleanField
 from wtforms.validators import DataRequired
 
 from wilfully.user.models import User
 
+
+class SpouseRelationshipForm(Form):
+    married = BooleanField('Are you married?', validators=[DataRequired()])
+    spousename = StringField('Spouse name')
 
 class LoginForm(Form):
     """Login form."""
