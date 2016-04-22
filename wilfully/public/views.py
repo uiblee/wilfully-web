@@ -4,7 +4,7 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, login_user, logout_user
 
 from wilfully.extensions import login_manager
-from wilfully.public.forms import LoginForm, SpouseRelationshipForm
+from wilfully.public.forms import LoginForm, SpouseRelationshipForm, ChildrenForm
 from wilfully.user.forms import RegisterForm
 from wilfully.user.models import User
 from wilfully.utils import flash_errors
@@ -74,3 +74,9 @@ def spouse():
     """Spouse Form page."""
     settings_form = SpouseRelationshipForm(request.form)
     return render_template('public/spouse.html', form=None, settings_form=settings_form)
+
+@blueprint.route('/user/relations/children')
+def children():
+    """Children Form page."""
+    settings_form = ChildrenForm(request.form)
+    return render_template('public/children.html', form=None, settings_form=settings_form)

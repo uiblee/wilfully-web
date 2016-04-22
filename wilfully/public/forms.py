@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Public forms."""
 from flask_wtf import Form
-from wtforms import PasswordField, StringField, BooleanField
+from wtforms import PasswordField, StringField, BooleanField, IntegerField, validators
 from wtforms.validators import DataRequired
 
 from wilfully.user.models import User
@@ -10,6 +10,11 @@ from wilfully.user.models import User
 class SpouseRelationshipForm(Form):
     married = BooleanField('Are you married?', validators=[DataRequired()])
     spousename = StringField('Spouse name')
+
+class ChildrenForm(Form):
+    children = BooleanField('Do you have children?', validators=[DataRequired()])
+    childrennumber = IntegerField('Children number', [validators.NumberRange(min=0, max=10)])
+    childrenname = StringField('Children 1 name')
 
 class LoginForm(Form):
     """Login form."""
