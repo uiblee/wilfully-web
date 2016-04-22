@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Public forms."""
 from flask_wtf import Form
-from wtforms import PasswordField, StringField, BooleanField, IntegerField, validators
+from wtforms import PasswordField, StringField, BooleanField, IntegerField, TextAreaField, RadioField, validators
 from wtforms.validators import DataRequired
 
 from wilfully.user.models import User
@@ -14,6 +14,12 @@ class SpouseRelationshipForm(Form):
 class ChildrenForm(Form):
     children = BooleanField('Do you have children?', validators=[DataRequired()])
     childrennumber = IntegerField('Children number', [validators.NumberRange(min=0, max=10)])
+    childrenname = StringField('Children 1 name')
+
+class FuneralBodyForm(Form):
+    funeral = RadioField('Do you want to be buried or cremated?', choices=[('value','Buried'),('value_two','Cremated'), ('value_three','Other')])
+    buriallocation = StringField('Burial location')
+    burialdetails = TextAreaField('Burial details')
     childrenname = StringField('Children 1 name')
 
 class LoginForm(Form):
