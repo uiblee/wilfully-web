@@ -47,7 +47,7 @@ section {
   overflow: auto;
 }
 
-input .email_form{
+#inputEmail{
    text-align:center;
 }
 
