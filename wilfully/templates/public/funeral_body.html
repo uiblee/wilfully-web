@@ -6,8 +6,8 @@
     <form id="registerForm" class="form form-register" method="POST" action="" role="form">
             {{ settings_form.hidden_tag() }}
             <div class="form-group">
-              {{settings_form.funeral.label}}
-              {% for subfield in settings_form.funeral %}
+              {{settings_form.funeral_body.label}}
+              {% for subfield in settings_form.funeral_body %}
                 <tr>
                     <td>{{ subfield }}</td>
                     <td>{{ subfield.label }}</td>
