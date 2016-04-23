@@ -4,7 +4,7 @@ from flask import Blueprint, flash, redirect, render_template, request, url_for
 from flask_login import login_required, login_user, logout_user
 
 from wilfully.extensions import login_manager
-from wilfully.public.forms import LoginForm, SpouseRelationshipForm, ChildrenForm, FuneralBodyForm
+from wilfully.public.forms import LoginForm, SpouseRelationshipForm, ChildrenForm, FuneralBodyForm, FuneralServiceForm, FinancialAssetsForm
 from wilfully.user.forms import RegisterForm
 from wilfully.user.models import User
 from wilfully.utils import flash_errors
@@ -81,8 +81,20 @@ def children():
     settings_form = ChildrenForm(request.form)
     return render_template('public/children.html', form=None, settings_form=settings_form)
 
-@blueprint.route('/user/relations/funeralbody')
+@blueprint.route('/user/funeral/funeralbody')
 def funeral_body():
     """Funeral: Body Form page."""
     settings_form = FuneralBodyForm(request.form)
     return render_template('public/funeral_body.html', form=None, settings_form=settings_form)
+
+@blueprint.route('/user/funeral/funeralservice')
+def funeral_service():
+    """Funeral: Service Form page."""
+    settings_form = FuneralServiceForm(request.form)
+    return render_template('public/funeral_service.html', form=None, settings_form=settings_form)
+
+@blueprint.route('/user/will/financialassets')
+def financial_assets():
+    """Will: Financial Assets Form page."""
+    settings_form = FinancialAssetsForm(request.form)
+    return render_template('public/financial_assets.html', form=None, settings_form=settings_form)

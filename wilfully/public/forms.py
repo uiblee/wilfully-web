@@ -17,10 +17,20 @@ class ChildrenForm(Form):
     childrenname = StringField('Children 1 name')
 
 class FuneralBodyForm(Form):
-    funeral = RadioField('Do you want to be buried or cremated?', choices=[('value','Buried'),('value_two','Cremated'), ('value_three','Other')])
+    funeral_body = RadioField('Do you want to be buried or cremated?', choices=[('value','Buried'),('value_two','Cremated'), ('value_three','Other')])
     buriallocation = StringField('Burial location')
     burialdetails = TextAreaField('Burial details')
-    childrenname = StringField('Children 1 name')
+
+class FuneralServiceForm(Form):
+    funeral_service = RadioField('Do you want to have a service?', choices=[('value','Yes'),('value_two','No')])
+    servicelocation = StringField('Service location')
+    servicedetails = TextAreaField('Service details')
+
+class FinancialAssetsForm(Form):
+    desendants = BooleanField('Split all financial assets evenly among all living desendants?', validators=[DataRequired()])
+    fin_assets = StringField('To whom do you leave your financial assets?')
+    percent_fin_assets = IntegerField('What percentage do you want to leave to this individual?')
+    accountdetails = TextAreaField('Where are all of your accounts (Savings, Checking, IRA, 401k, Trading, etc.')
 
 class LoginForm(Form):
     """Login form."""

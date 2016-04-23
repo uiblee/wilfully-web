@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h1>Funeral wishes: Service</h1>
+    <br/>
+    <form id="registerForm" class="form form-register" method="POST" action="" role="form">
+            {{ settings_form.hidden_tag() }}
+            <div class="form-group">
+              {{settings_form.funeral_service.label}}
+              {% for subfield in settings_form.funeral_service %}
+                <tr>
+                    <td>{{ subfield }}</td>
+                    <td>{{ subfield.label }}</td>
+                </tr>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              {{settings_form.servicelocation.label}}
+              {{settings_form.servicelocation(class_='form-control', placeholder='Where would you like to be buried?')}}
+            </div>
+            <div class="form-group">
+              {{settings_form.servicedetails.label}}
+              {{settings_form.servicedetails(class_='form-control', placeholder='And other details to share?')}}
+            </div>
+            <p><input class="btn btn-default btn-submit" type="submit" value="Save"></p>
+    </form>
+</div> <!-- /container -->
+
+    <p><em>Already registered?</em> Click <a href="/">here</a> to login.</p>
+</div>
+
+
+{% endblock %}
