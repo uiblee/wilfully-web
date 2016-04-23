@@ -31,7 +31,7 @@
 
 <header>{% block header %}{% endblock %}</header>
 
-<div role="main">
+<div role="main" class="{% block main_classes %}container{% endblock %}">
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
   <div class="row">
