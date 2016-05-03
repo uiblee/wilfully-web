@@ -81,6 +81,12 @@ def children():
     settings_form = ChildrenForm(request.form)
     return render_template('public/children.html', form=None, settings_form=settings_form)
 
+@blueprint.route('/user/relations/dependent')
+def dependent():
+    """Dependent Form page."""
+    settings_form = DependentForm(request.form)
+    return render_template('public/dependent.html', form=None, settings_form=settings_form)
+
 @blueprint.route('/user/funeral/funeralbody')
 def funeral_body():
     """Funeral: Body Form page."""

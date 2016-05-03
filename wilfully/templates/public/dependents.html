@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+  <h1>Dependents</h1>
+    <br/>
+    <html>
+<body>
+<script type="text/javascript" language="JavaScript">
+  function HidePart(d) { document.getElementById(d).style.display = "none";  }
+  function ShowPart(d) { document.getElementById(d).style.display = "block"; }
+  function CheckboxChecked(b,d)
+    {
+     if(b) { ShowPart(d); }
+     else  { HidePart(d); }
+  }
+</script>
+
+<form 
+  <p>
+<input 
+   type="checkbox" 
+   name="mycheckbox" 
+   value="yes" 
+   onclick="CheckboxChecked(this.checked,'checkboxdiv')">
+Check this box if you are married.
+</p>
+
+<div id="checkboxdiv" style="display:none">
+<p>
+Type your spouse's name here:<br />
+<input type="text">
+</p>
+</div>
+</form>
+
+
+<script type="text/javascript">
+// we'll add code later.
+</script>
+
+</body>
+</html>
+</div> <!-- /container -->
+
+    <p><em>Already registered?</em> Click <a href="/">here</a> to login.</p>
+</div>
+{% endblock %}
