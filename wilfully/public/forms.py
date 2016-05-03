@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Public forms."""
 from flask_wtf import Form
-from wtforms import PasswordField, StringField, BooleanField, IntegerField, TextAreaField, RadioField, SelectField, validators
+from wtforms import PasswordField, StringField, BooleanField, IntegerField, TextAreaField, RadioField, FieldList
+from wtforms import validators
+from wtforms.fields import html5
 from wtforms.validators import DataRequired
 
 from wilfully.user.models import User
@@ -13,8 +15,8 @@ class SpouseRelationshipForm(Form):
 
 class ChildrenForm(Form):
     children = BooleanField('Do you have children?', validators=[DataRequired()])
-    childrennumber = IntegerField('Children number', [validators.NumberRange(min=0, max=100)], id="childrennumber")
-    childrenname = StringField('Children 1 name')
+    childrennumber = html5.IntegerField('Children number', [validators.NumberRange(min=0, max=100)], id="childrennumber")
+    childrenname = FieldList(StringField('Child name'), min_entries=1)
 
 class DependentForm(Form):
     dependent = BooleanField('Do you have any dependents?', validators=[DataRequired()])
