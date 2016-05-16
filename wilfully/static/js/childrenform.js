@@ -35,6 +35,13 @@ $(document).ready(function(){
           $('.children').append(childWidget(widgetNumber+index-1));
         }
       }
+      // Remove widgets
+      else if (childrenNumber < widgetNumber) {
+        var difference = widgetNumber - childrenNumber;
+        for (var index = widgetNumber; index >= difference; index--) {
+          $('.children').remove(childWidget(widgetNumber));
+        }
+      }
 
     }
   });
