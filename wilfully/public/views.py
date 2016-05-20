@@ -7,6 +7,7 @@ from wilfully.extensions import login_manager
 from wilfully.public.forms import LoginForm, SpouseRelationshipForm, ChildrenForm, FuneralBodyForm, FuneralServiceForm, FinancialAssetsForm
 from wilfully.user.forms import RegisterForm
 from wilfully.user.models import User
+from wilfully.public.models import FuneralProfile
 from wilfully.utils import flash_errors
 
 blueprint = Blueprint('public', __name__, static_folder='../static')
@@ -87,10 +88,20 @@ def dependent():
     settings_form = DependentForm(request.form)
     return render_template('public/dependent.html', form=None, settings_form=settings_form)
 
-@blueprint.route('/user/funeral/funeralbody')
+@blueprint.route('/user/funeral/funeralbody', methods=['GET', 'POST'])
 def funeral_body():
     """Funeral: Body Form page."""
     settings_form = FuneralBodyForm(request.form)
+    if request.method == 'POST':
+        if settings_form.validate_on_submit():
+            profile = FuneralProfile(user_id=1, ceremony=settings_form.burialdetails.data, location=settings_form.buriallocation.data)
+            profile.save()
+            flash('Your data has been saved.', 'success')
+            #import ipdb; ipdb.set_trace()
+            #redirect_url = request.args.get('next') or url_for('user.members')
+            #return redirect(redirect_url)
+        else:
+            flash_errors(form)
     return render_template('public/funeral_body.html', form=None, settings_form=settings_form)
 
 @blueprint.route('/user/funeral/funeralservice')
